@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# Registration Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and clean registration form built as part of a Front-End technical task.
+The project focuses on form validation, code clarity, and a modern user interface without using pre-made templates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- Registration form with the following fields:
+  - Name
+  - Email
+  - Password
+  - Confirm Password
+- Client-side validation:
+  - All fields are required
+  - Email format validation
+  - Password and confirm password must match
+- Clear validation error messages
+- Responsive and modern UI
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+### React
+React is used to build the user interface in a component-based and maintainable way.
+It allows clear separation of concerns and better state management.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### React Hook Form
+React Hook Form is used for handling form state and submission logic efficiently.
+It minimizes unnecessary re-renders and provides a clean API for managing form inputs and validation errors.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Zod
+Zod is used to define a centralized and explicit validation schema.
+It ensures consistent validation rules and enables strong type inference, improving reliability and maintainability.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Tailwind CSS
+Tailwind CSS is used to create a modern and clean design without relying on pre-built templates.
+It provides full control over styling while keeping the UI simple and consistent.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### TypeScript
+TypeScript is used to add type safety and improve overall code quality.
+It helps catch errors early during development and makes the code easier to understand and maintain.
